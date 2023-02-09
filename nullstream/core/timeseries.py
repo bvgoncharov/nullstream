@@ -1,8 +1,37 @@
 import numpy as np
 
 class NullStreamBaseTD:
-    """ Time-domain null stream, strain response at time delay difference is obtained through interpolation """
-    def __init__(self, projected_strain_dict, time_array_dict, time_delay_dict, f_plus_dict, f_cross_dict):
+    """ Time-domain null stream time series object. Calling an instance 
+    of this object provides network null stream time series data. 
+    Time-domain null stream, strain response at time delay difference 
+    is obtained through interpolation.
+
+    Parameters
+    ==========
+    projected_strain_dict: dict
+        A dict of `numpy.ndarray`, with keys corresponding to detector 
+        indices. The reference detector index, with respect to which
+        null stream is calculated, must be 0.
+    time_array_dict: dict
+        A dict of `numpy.ndarray` with times corresponding to
+        projected strain time series.
+    time_delay_dict: dict
+        A dict of time delays with respect to detector 0.
+    f_plus_dict: dict
+        A dict with F_+ corresponding to detectors.
+    f_cross_dict: dict
+        A dict with F_x corresponding to detectors.
+
+    Returns
+    =======
+    network_null_stream: `numpy.ndarray`
+        Sky position dependent network null stream
+    et_null_stream: `numpy.ndarray`
+        ET null stream independent of gravitational wave source
+        parameters
+    """
+    def __init__(self, projected_strain_dict, time_array_dict, 
+                 time_delay_dict, f_plus_dict, f_cross_dict):
         self.proj_strain = projected_strain_dict
         self.time_array = time_array_dict
         self.time_delay = time_delay_dict

@@ -11,7 +11,7 @@ class NullStreamPycbcTD(NullStreamBaseTD):
         A dict of `pycbc.types.timeseries.TimeSeries`, with keys
         corresponding to detector names.
     pycbc_detector_dict: dict
-        A dict of pycbc.detector.Detector`.
+        A dict of `pycbc.detector.Detector`.
     reference_detector_key: str
         Key of a detector to which null stream will be referenced to
         (time delays)
