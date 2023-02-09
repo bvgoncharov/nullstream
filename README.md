@@ -6,7 +6,9 @@ The repository is still at the early stages of development, any contributions ar
 
 ## Documentation
 
-Under development.
+Under development. The code is documented with Python docstrings. Run `python setup.py install` to install `nullstream` on your local machine.
+
+At the moment, there are classes with methods to calculate network and ET null stream from detector strain data, as well as `PyCBC` or `Bilby` time series data. There is also null sstream likelihood function based on `Bilby` likelihood.
 
 ## Citation
 
